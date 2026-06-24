@@ -1,64 +1,37 @@
-# Manegcurr Services
+JobTrack AI
 
-Backend monolítico em TypeScript para gerenciamento de candidaturas, currículos e autenticação.
+O JobTrack AI é uma plataforma criada para ajudar pessoas a organizarem e acompanharem suas candidaturas de emprego de forma mais estratégica.
 
-## O que este protótipo entrega
+A proposta é simples: reunir em um só lugar todas as vagas em que o usuário tem interesse ou já se candidatou, facilitando o acompanhamento de cada oportunidade.
 
-- Auth com JWT e senha com bcrypt.
-- CRUD de `cvs` e `positions`.
-- Middleware de autorização por propriedade.
-- Envelope padrão de resposta.
-- Persistência em PostgreSQL com Prisma.
-- Validação com Zod.
-- Upload local com Multer.
+Além disso, a plataforma utiliza inteligência artificial para analisar tanto o perfil profissional quanto as descrições das vagas, identificando pontos fortes, características em destaque e possíveis diferenças entre o que a vaga exige e o que o candidato oferece.
 
-## Setup
+Com isso, o usuário consegue visualizar de forma clara:
 
-1. Copie `.env.example` para `.env`.
-2. Ajuste `JWT_SECRET` e os caminhos de uploads, se quiser.
-3. Gere o client e sincronize o schema:
+quais habilidades e experiências mais se destacam no seu perfil;
+quais são os principais requisitos de cada vaga;
+o nível de compatibilidade entre seu perfil e a oportunidade;
+quais pontos podem ser melhorados para aumentar suas chances.
+Principais funcionalidades
+Cadastro e organização de vagas salvas ou aplicadas;
+Acompanhamento do andamento de cada candidatura;
+Análise inteligente do perfil profissional;
+Análise detalhada das vagas;
+Comparação entre perfil e vaga;
+Identificação de pontos fortes e oportunidades de melhoria;
+Sugestões para evolução profissional.
+Objetivo
 
-```bash
-npm run prisma:generate
-npm run prisma:dbpush
-```
+O objetivo do JobTrack AI é transformar o processo de busca por emprego em algo mais organizado, claro e eficiente, ajudando candidatos a entenderem melhor seu posicionamento no mercado e a tomarem decisões mais assertivas em sua jornada profissional.
 
-4. Se você estiver apontando para um banco vazio e quiser usar migrations, `npm run prisma:migrate` também está disponível.
-5. Instale dependências e rode o projeto:
+Visão futura
 
-```bash
-npm install
-npm run build
-npm start
-```
+No futuro, a plataforma poderá expandir para oferecer novas funcionalidades, como:
 
-## Testes
+recomendações de vagas mais alinhadas ao perfil;
+sugestões para melhorar currículos;
+geração de cartas de apresentação;
+acompanhamento de evolução profissional;
+relatórios de desempenho em candidaturas.
 
-Os testes cobrem o fluxo de autenticação e o CRUD de `positions`.
-
-```bash
-npm test
-```
-
-## Endpoints
-
-- `POST /auth/register`
-- `POST /auth/login`
-- `GET /users/me`
-- `POST /cvs`
-- `GET /cvs`
-- `GET /cvs/:id`
-- `DELETE /cvs/:id`
-- `POST /positions`
-- `GET /positions`
-- `GET /positions/:id`
-- `PATCH /positions/:id/status`
-- `PUT /positions/:id`
-- `DELETE /positions/:id`
-
-## Decisões assumidas
-
-- Sem refresh token.
-- Listagens sem paginação.
-- Upload de CV usa `multipart/form-data` com o campo `document`.
-- O status padrão de nova candidatura é `applied`.
+O JobTrack AI busca ser mais do que um organizador de vagas: a ideia é se tornar um parceiro inteligente na construção da carreira profissional.
